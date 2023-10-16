@@ -2,7 +2,9 @@
 
 // to get everything which is mentioned in the app folder.
 const app = require('./app');
+const http = require('http').createServer(app).listen(8000);
 const db = require('./config/database');
+const userModal = require('./model/user.model');
 
 
 //create a port for the server
