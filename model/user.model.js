@@ -1,5 +1,8 @@
 const mongoose = require('mongoose');
+<<<<<<< HEAD
 const bcrypt = require('bcrypt');
+=======
+>>>>>>> f6ea32e120fddb380ca1c9a5a846060379773f15
 const db = require('../config/database');
 
 // create user schema
@@ -18,6 +21,7 @@ const userSchema = new Schema({
     }
 });
 
+<<<<<<< HEAD
 userSchema.pre('save', async function(){
     try {
         var user = this;
@@ -28,6 +32,8 @@ userSchema.pre('save', async function(){
         throw error;
     }
 })
+=======
+>>>>>>> f6ea32e120fddb380ca1c9a5a846060379773f15
 const userModal = db.model('user', userSchema);
 
 module.exports = userModal;
