@@ -2,6 +2,8 @@
 
 // to get everything which is mentioned in the app folder.
 const app = require('./app');
+const db = require('./config/database');
+
 
 //create a port for the server
 const port = 3000;
