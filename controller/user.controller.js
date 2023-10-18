@@ -19,13 +19,13 @@ exports.login = async (req, res, next)=>{
         const {email,password} = req.body;
 
         // check if email is registered in the database
-        const user = UserService.checkUser(email);
+        const user = await UserService.checkUser(email);
         if(!user){
             throw new Error('User does not exist');
         }
 
         // passing the user entered password to the password in the db
-        const isMatch = user.comparePassword(password);
+        const isMatch = await user.comparePassword(password);
         if(isMatch == false){
             throw new Error('Password is not valid');
         };
