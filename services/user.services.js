@@ -1,4 +1,6 @@
 const userModal = require('../model/user.model');
+// import jwt
+const jwt = require('jsonwebtoken');
 
 class UserService{
     // register a new user
@@ -18,6 +20,11 @@ class UserService{
         } catch (error) {
             throw error;
         }
+    };
+
+    // function to generate jwt token for user login
+    static async generateJWT(tokenData, secretkey, jwt_expire){
+        return jwt.sign(tokenData,secretkey,{expiresIn:jwt_expire})
     };
 
 }
