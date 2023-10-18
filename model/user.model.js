@@ -27,7 +27,17 @@ userSchema.pre('save', async function(){
     } catch (error) {
         throw error;
     }
-})
+});
+
+// function to compare the password entered during login via bcrypt compare
+userSchema.methods.comparePassword = async function(userPassword){
+    try {
+        const isMatch = await bcrypt.compare(userPassword, this.password);
+    } catch (error) {
+        throw error;
+    }
+};
+
 const userModal = db.model('user', userSchema);
 
 module.exports = userModal;
