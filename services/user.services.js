@@ -1,4 +1,4 @@
-const userModal = require('../model/user.model');
+const userModel = require('../model/user.model');
 // import jwt
 const jwt = require('jsonwebtoken');
 
@@ -6,7 +6,7 @@ class UserService{
     // register a new user
     static async registerUser(email,password){
         try {
-            const creatUser = new userModal({email,password});
+            const creatUser = new userModel({email,password});
             return await creatUser.save();
         } catch (error) {
             throw error;
@@ -16,7 +16,7 @@ class UserService{
     // function to check if user is registered in the db
     static async checkUser(email){
         try {
-            return await userModal({email});
+            return await userModel.findOne({email});
         } catch (error) {
             throw error;
         }
