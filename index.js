@@ -4,7 +4,8 @@
 const app = require('./app');
 const http = require('http').createServer(app).listen(8000);
 const db = require('./config/database');
-const userModal = require('./model/user.model');
+const userModel = require('./model/user.model');
+const todoModel = require('./model/todo.model');
 
 
 //create a port for the server
