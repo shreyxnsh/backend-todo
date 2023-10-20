@@ -2,7 +2,7 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-const userRouter = require('./routers/user.routers');
+const userRouter = require('./routers/user.router');
 
 // body parser is used to get data which comes in the body 
 app.use(bodyParser.json());
