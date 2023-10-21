@@ -15,3 +15,19 @@ exports.createTodo = async (req, res, next)=>{
         next(error);
     }
 }
+
+// function to get all todo tasks of a particular user
+exports.getUserTodo = async (req, res, next)=>{
+    try {
+       // initializing parameters in the request body 
+       // userId will be used to fetch todo tasks by identifying using id
+       const {userId} = req.body;
+       
+       // data will be fetched and stored in this todo variable
+       let todo = await TodoService.getTodoData(userId);
+       res.json({status:true, success: todo}); 
+
+    } catch (error) {
+        next(error);
+    }
+}
