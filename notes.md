@@ -1,4 +1,4 @@
-to create an API :
+To create an API :
 
 Step 1 : Create the model, make the schema, make a collection of that data 
 Step 2 : Create a route for that api 
