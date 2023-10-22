@@ -30,3 +30,19 @@ exports.getUserTodo = async (req, res, next) => {
         next(error);
     }
 }
+
+// function to delete todo task of a user
+exports.deleteTodo = async (req, res, next) => {
+    try {
+       // Extract the userId from the query parameters
+       const {id} = req.body;
+       
+       // data will be fetched and stored in this todo
+       let deleted = await TodoService.deleteTodoData(id);
+       res.json({ status: true, success: deleted });
+
+    } catch (error) {
+        next(error);
+    }
+}
+
