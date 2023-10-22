@@ -17,6 +17,14 @@ class TodoService{
         return todoData;
     }
 
+     // function to delete a users todo
+     static async deleteTodoData(_id){
+        //create object of todomodel which will fetch data by userid
+        // mongoose query to fetch
+        const deletedTodo = await todoModel.findOneAndDelete({_id: _id});
+        return deletedTodo;
+    }
+
 }
 
 module.exports = TodoService;
